@@ -129,7 +129,7 @@ export default function Home() {
         </div>
 
         {/* Right Column - Socials / Info */}
-        <aside className="flex-1 flex flex-col items-center lg:items-start text-center border lg:text-left space-y-4 max-w-lg">
+        <aside className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 max-w-lg">
           <a href="#" className="text-4xl font-semibold">
             <span className="flip-container">
               <span className="flip-old">LINKEDIN</span>
