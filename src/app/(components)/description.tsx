@@ -7,10 +7,12 @@ const Description = () => {
 
   return (
     <p className="text-neutral-700 leading-6" ref={descriptionRef}>
-      We build high‑velocity brand sites where craft meets code—clean
-      aesthetics, cinematic interaction, and performance you can feel. The full
-      site launches soon; hit Notify to join the first wave when we open
-      bookings.
+      At our core, we build software that drives results — from sleek web
+      platforms to tools that empower teams and creators. We’re dedicated to
+      delivering solutions that are simple, impactful, and built to last. And as
+      we grow, we’re preparing to expand into interactive entertainment and game
+      technology, scaling our studio into a hub for both innovation and
+      creativity.
     </p>
   );
 };

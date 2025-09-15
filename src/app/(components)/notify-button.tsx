@@ -8,6 +8,7 @@ const NotifyButton = () => {
            hover:bg-neutral-950 hover:text-white  duration-500  transition-colors"
     >
       <span className="relative z-10 flex items-center space-x-2">
+        <span>Official Site Coming Soon —</span>
         <span>Notify Me</span>
         <Bell className="h-5 w-5 transition-transform duration-500 group-hover:rotate-12" />
       </span>
