@@ -2,30 +2,34 @@
 import { Bell } from "lucide-react";
 import Link from "next/link";
 import Header from "./(components)/Header";
+import Footer from "./(components)/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen text-neutral-950 bg-neutral-50">
+    <div className="flex flex-col min-h-screen text-neutral-950 bg-neutral-100">
       <Header />
       {/* Main Section */}
       <main className="flex flex-wrap lg:gap-52 gap-32 min-h-screen px-10 py-5 items-center justify-center">
         {/* Left Column */}
         <div className="flex-1 flex flex-col py-10 justify-center lg:justify-start max-w-lg space-y-6 text-center lg:text-left mt-20 lg:mt-0">
           <h1 className="text-6xl sm:text-8xl font-extrabold tracking-tight leading-20">
-            FORZHEN STUDIOS<span className="font-semibold text-[16px] "> ™</span>
+            FORZHEN STUDIOS
+            <span className="font-semibold text-[16px] "> ™</span>
           </h1>
 
           <p className="text-neutral-700 leading-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi,
-            quos dolorum, perferendis saepe, qui vel illo consectetur eum
-            similique ab nam! Laboriosam ut cum libero eum quis harum sunt
-            officia?
+            At our core, we build software that drives results — from sleek web
+            platforms to tools that empower teams and creators. We’re dedicated
+            to delivering solutions that are simple, impactful, and built to
+            last. And as we grow, we’re preparing to expand into interactive
+            entertainment and game technology, scaling our studio into a hub for
+            both innovation and creativity.
           </p>
 
           {/* Notify Me Button */}
           <button className="relative mt-8 flex items-center justify-center rounded-full border-2 border-neutral-950 bg-neutral-50 px-6 py-3 overflow-hidden group hover:bg-neutral-950 hover:text-white transition-colors duration-500">
             <span className="relative z-10 flex items-center space-x-2">
-              <span>Notify Me</span>
+              <span>Official Site Coming Soon —</span><span>Notify Me</span>
               <Bell className="h-5 w-5 transition-transform duration-500 group-hover:rotate-12" />
             </span>
             {/* Background animation */}
@@ -83,27 +87,7 @@ export default function Home() {
         </aside>
       </main>
 
-      {/* Footer */}
-      <footer className="flex flex-col sm:flex-row items-center bottom-0 left-0 right-0 justify-between py-4 px-5 bg-neutral-50">
-        <p>
-          &copy; {new Date().getFullYear()} Forzhen Studios. All rights
-          reserved.
-        </p>
-        <div className="flex space-x-4 mt-2 sm:mt-0">
-          <Link
-            href="/privacy"
-            className="text-sm hover:text-neutral-700 transition-colors"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="/terms"
-            className="text-sm hover:text-neutral-700 transition-colors"
-          >
-            Terms of Service
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
