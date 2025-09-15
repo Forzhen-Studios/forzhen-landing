@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/app/(components)/Footer";
 import Header from "@/app/(components)/Header";
 import Image from "next/image";
 
@@ -13,7 +14,7 @@ export default function AboutUsPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-neutral-200 overflow-hidden">
+    <div className="relative min-h-screen bg-neutral-100 overflow-hidden">
       <Header />
       {/* Page transition overlay */}
       <div
@@ -55,12 +56,17 @@ export default function AboutUsPage() {
             }`}
           >
             <p>
-              At Forzhen Studios, we’re obsessed with building premium
-              experiences. From beautifully crafted websites to innovative
-              digital tools, we focus on quality, attention to detail, and
-              timeless design. Our vision reaches beyond today—we’re laying the
-              foundation for cutting-edge technology that will shape the future
-              of games and software.
+              At Forzhen Studios, we’re committed to building premium digital
+              experiences that help businesses and creators thrive. From
+              beautifully crafted websites to innovative tools, we bring
+              together design, functionality, and engineering excellence.
+              Founded by Chiberu, Yash, and Troy, our team is driven by
+              creativity, ambition, and a shared vision of what technology can
+              achieve. While our current focus is on delivering impactful
+              software solutions, we are also laying the groundwork for future
+              advancements in gaming and interactive technology. Forzhen Studios
+              is more than a company — it’s a team dedicated to shaping the
+              future of digital innovation.
             </p>
           </div>
         </div>
@@ -101,6 +107,8 @@ export default function AboutUsPage() {
           />
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
