@@ -1,6 +1,7 @@
 "use client";
 
 import CompanyEmail from "@/components/company-email";
+import TextHover from "@/components/text-hover";
 import { socialLinks } from "@/constants/socialLinks";
 import useLinesAnimation from "@/hooks/useLinesAnimation";
 import Link from "next/link";
@@ -24,15 +25,11 @@ const Socials = () => {
       {socialLinks.map((link) => (
         <Link
           href={link.url}
-          className="text-4xl font-semibold s"
+          className="text-4xl font-semibold"
           key={link.name}
           target="_blank"
         >
-          <span className="flip-container s">
-            {link.name}
-            {/* <span className="flip-old">{link.name}</span>
-            <span className="flip-new">{link.name}</span> */}
-          </span>
+          <TextHover text={link.name} className={"s"} />
         </Link>
       ))}
       <CompanyEmail class="s" />
