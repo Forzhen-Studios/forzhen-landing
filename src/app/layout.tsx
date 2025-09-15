@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Forzhen Studios - Game Development & Design",
-  description: "Forzhen Studios is a game development and design studio.",
+  title: "Links by Forzhen — Web design & development | Game development ",
+  description: "Links by Forzhen is a links site for Forzhen Studios by Forzhen Studios.",
 };
 
 export default function RootLayout({
