@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+
+gsap.registerPlugin(SplitText);
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Links by Forzhen — Web design & development | Game development ",
-  description: "Links by Forzhen is a links site for Forzhen Studios by Forzhen Studios.",
+  description:
+    "Links by Forzhen is a links site for Forzhen Studios by Forzhen Studios.",
 };
 
 export default function RootLayout({

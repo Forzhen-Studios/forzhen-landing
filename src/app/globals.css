@@ -57,18 +57,18 @@ body {
   opacity: 0;
 }
 
-
 .underline-animate::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
-  height: 2px;
+  top: 20;
+  height: 1px;
   width: 100%;
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s ease-in-out;
+  /* cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .underline-animate:hover::after {

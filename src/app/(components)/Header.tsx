@@ -2,11 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Circle } from "lucide-react";
 
-
-
 export default function Header() {
   return (
-    <header className="w-full flex items-center justify-between px-5 py-4 fixed z-20">
+    <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4  z-20">
       <Link href="/">
         <Image
           src="/studio_logo_white.png"
