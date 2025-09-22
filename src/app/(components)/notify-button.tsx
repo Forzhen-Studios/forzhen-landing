@@ -12,7 +12,6 @@ const NotifyButton = () => {
         <span>Notify Me</span>
         <Bell className="h-5 w-5 transition-transform duration-500 group-hover:rotate-12" />
       </span>
-      {/* Background animation */}
       <span className="absolute inset-0 bg-neutral-950 scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 rounded-full"></span>
     </button>
   );
