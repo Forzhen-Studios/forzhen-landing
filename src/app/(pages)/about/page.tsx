@@ -14,18 +14,18 @@ export default function AboutUsPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-neutral-100 overflow-hidden">
+    <div className="relative min-h-screen bg-neutral-50 overflow-hidden">
       <Header />
       {/* Page transition overlay */}
       <div
-        className={`absolute inset-0 bg-neutral-950  z-10 transition-all duration-700 ease-in-out ${
+        className={`absolute inset-0 bg-neutral-950  z-52 transition-all duration-700 ease-in-out ${
           pageLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       />
 
       <div className="relative mt-14 z-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-8 md:px-20 py-20 items-center">
         <div>
-          <h1 className="relative text-neutral-400 text-6xl md:text-8xl font-extrabold mb-8">
+          <h1 className="relative text-neutral-500 text-6xl md:text-8xl font-extrabold mb-8">
             {/* Top slice */}
             <span className="block overflow-hidden leading-[1] relative">
               <span
@@ -60,7 +60,7 @@ export default function AboutUsPage() {
               experiences that help businesses and creators thrive. From
               beautifully crafted websites to innovative tools, we bring
               together design, functionality, and engineering excellence.
-              Founded by Chiberu, Yash, and Troy, our team is driven by
+              Founded by Tevin Campbell (Troy), and Yashwanth Venkatesan (Yash). Our team is driven by
               creativity, ambition, and a shared vision of what technology can
               achieve. While our current focus is on delivering impactful
               software solutions, we are also laying the groundwork for future
