@@ -22,9 +22,10 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Helvetica", sans-serif;
+  font-family: "Geist", sans-serif;
 }
 
+/* Fade effect for page transition */
 .fade {
   position: fixed; /* Position relative to the header */
   top: 100;
@@ -32,10 +33,10 @@ body {
   width: 100%;
   height: 20px; /* Adjust height to control fade area */
   background: linear-gradient(to bottom, oklch(97% 0 0), transparent 80%);
-  z-index: 99;
+  z-index: 50;
 }
 
-/* Flip-up flipbook effect */
+/* Flip-up animation for hero/heading texts */
 .flip-container {
   overflow: hidden;
   display: inline-block;
@@ -78,7 +79,6 @@ body {
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.4s ease-in-out;
-  /* cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .underline-animate:hover::after {
