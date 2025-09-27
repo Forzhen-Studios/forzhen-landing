@@ -1,7 +1,6 @@
 "use client";
 import Footer from "@/app/(components)/footer";
 import Header from "@/app/(components)/Header";
-import Image from "next/image";
 
 import { useEffect, useState } from "react";
 
@@ -14,18 +13,18 @@ export default function AboutUsPage() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-neutral-100 overflow-hidden">
+    <div className="relative min-h-screen bg-neutral-50 overflow-hidden">
       <Header />
       {/* Page transition overlay */}
       <div
-        className={`absolute inset-0 bg-neutral-950  z-10 transition-all duration-700 ease-in-out ${
+        className={`absolute inset-0 bg-neutral-950  z-52 transition-all duration-700 ease-in-out ${
           pageLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       />
 
       <div className="relative mt-14 z-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-8 md:px-20 py-20 items-center">
         <div>
-          <h1 className="relative text-neutral-400 text-6xl md:text-8xl font-extrabold mb-8">
+          <h1 className="relative text-neutral-950 text-6xl md:text-8xl font-extrabold mb-8">
             {/* Top slice */}
             <span className="block overflow-hidden leading-[1] relative">
               <span
@@ -60,50 +59,52 @@ export default function AboutUsPage() {
               experiences that help businesses and creators thrive. From
               beautifully crafted websites to innovative tools, we bring
               together design, functionality, and engineering excellence.
-              Founded by Chiberu, Yash, and Troy, our team is driven by
-              creativity, ambition, and a shared vision of what technology can
-              achieve. While our current focus is on delivering impactful
-              software solutions, we are also laying the groundwork for future
-              advancements in gaming and interactive technology. Forzhen Studios
-              is more than a company — it’s a team dedicated to shaping the
-              future of digital innovation.
+              Founded by Tevin Campbell (Troy), and Yashwanth Venkatesan (Yash).
+              Our team is driven by creativity, ambition, and a shared vision of
+              what technology can achieve. While our current focus is on
+              delivering impactful software solutions, we are also laying the
+              groundwork for future advancements in gaming and interactive
+              technology. Forzhen Studios is more than a company — it’s a team
+              dedicated to shaping the future of digital innovation.
             </p>
           </div>
         </div>
-
         {/* Scrapbook Image Section */}
+        {/* Vision (top-right) → the future We are building
+        Creativity (bottom-right) → how we craft it
+        Performance (bottom-left) → the engineering power that delivers it */}
         <div
-          className={`grid grid-cols-2 gap-4 transition-all duration-700 ease-in-out delay-200 ${
+          className={`grid grid-cols-2 gap-5 transition-all duration-700 ease-in-out delay-200 ${
             pageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <Image
-            src="/about1.png"
-            alt="Studio work"
-            width={300}
-            height={200}
-            className="rounded-xl shadow-lg transform rotate-[-2deg]"
+          <div
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[-1deg]"
+            style={{
+              background:
+                "linear-gradient(220.55deg, #565656 0%, #181818 100%)",
+            }}
           />
-          <Image
-            src="/about1.png"
-            alt="Team collaboration"
-            width={300}
-            height={200}
-            className="rounded-xl shadow-lg transform rotate-[3deg]"
+          <div
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[-2deg]"
+            style={{
+              background:
+                "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
+            }}
           />
-          <Image
-            src="/about1.png"
-            alt="Creative process"
-            width={300}
-            height={200}
-            className="rounded-xl shadow-lg transform rotate-[1deg]"
+          <div
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[3deg]"
+            style={{
+              background:
+                "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
+            }}
           />
-          <Image
-            src="/about1.png"
-            alt="Design sketches"
-            width={300}
-            height={200}
-            className="rounded-xl shadow-lg transform rotate-[-1deg]"
+          <div
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[1deg]"
+            style={{
+              background:
+                "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
+            }}
           />
         </div>
       </div>
