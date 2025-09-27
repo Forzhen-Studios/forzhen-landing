@@ -13,7 +13,7 @@ const Title = () => {
   });
   return (
     <h1
-      className="text-6xl sm:text-8xl font-extrabold tracking-tight leading-20"
+      className="text-6xl sm:text-8xl font-extrabold tracking-normal leading-20"
       ref={titleRef}
     >
       FORZHEN STUDIOS
