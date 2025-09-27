@@ -32,8 +32,8 @@ const NotifyButton = () => {
         <DialogHeader>
           <DialogTitle>Sign up</DialogTitle>
           <DialogDescription>
-            We're currently working on our site sign up to get notified when
-            it's finished.
+            We$&apos;re currently working on our site sign up to get notified
+            when it&apos;s finished.
           </DialogDescription>
         </DialogHeader>
         <NotificationForm />

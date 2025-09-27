@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { FragmentInstance, useRef } from "react";
+import { useRef } from "react";
 import { SplitText } from "gsap/SplitText";
 
 type Options = {

@@ -6,7 +6,6 @@ import { z } from "zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -113,6 +112,15 @@ const NotificationForm = () => {
         >
           {form.formState.isSubmitting ? "Submitting..." : "Submit"}
         </button>
+
+        {status === "ok" && (
+          <p className="text-sm text-green-700">Thanks! You’re on the list.</p>
+        )}
+        {status === "error" && (
+          <p className="text-sm text-red-700">
+            Something went wrong. Please try again.
+          </p>
+        )}
       </form>
     </Form>
   );
