@@ -79,10 +79,6 @@ export default function AboutUsPage() {
         >
           <div
             className="w-80 h-52 rounded-xl shadow-lg transform rotate-[-1deg]"
-            style={{
-              background:
-                "linear-gradient(220.55deg, #565656 0%, #181818 100%)",
-            }}
           >
             <video
               autoPlay
