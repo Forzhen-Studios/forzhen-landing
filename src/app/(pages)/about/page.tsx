@@ -2,6 +2,7 @@
 import Footer from "@/app/(components)/footer";
 import Header from "@/app/(components)/Header";
 
+import useLinesAnimation from "@/hooks/useLinesAnimation";
 import { useEffect, useState } from "react";
 
 export default function AboutUsPage() {
@@ -12,6 +13,14 @@ export default function AboutUsPage() {
     return () => clearTimeout(timeout);
   }, []);
 
+  const titleRef = useLinesAnimation({
+    stagger: 0.1,
+    duration: 1,
+    ease: "power4.Out",
+    type: "lines",
+    delay: 0.1,
+    y: 200,
+  });
   return (
     <div className="relative min-h-screen bg-neutral-50 overflow-hidden">
       <Header />
@@ -24,23 +33,17 @@ export default function AboutUsPage() {
 
       <div className="relative mt-14 z-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-8 md:px-20 py-20 items-center">
         <div>
-          <h1 className="relative text-neutral-950 text-6xl md:text-8xl font-extrabold mb-8">
-            {/* Top slice */}
+          <h1 ref={titleRef} className="relative text-neutral-950 text-6xl md:text-8xl font-extrabold mb-8">
             <span className="block overflow-hidden leading-[1] relative">
               <span
-                className={`block transform transition-transform duration-700 ease-in-out ${
-                  pageLoaded ? "translate-y-0" : "-translate-y-full"
-                }`}
+                className="block transform transition-transform duration-700 ease-in-out"
               >
                 WHO
               </span>
             </span>
-            {/* Bottom slice */}
             <span className="block overflow-hidden leading-[1] relative">
               <span
-                className={`block transform transition-transform duration-700 ease-in-out delay-100 ${
-                  pageLoaded ? "translate-y-0" : "translate-y-full"
-                }`}
+                className="block transform transition-transform duration-700 ease-in-out delay-100"
               >
                 WE ARE
               </span>
@@ -48,11 +51,8 @@ export default function AboutUsPage() {
           </h1>
 
           <div
-            className={`max-w-xl text-lg text-neutral-950 leading-relaxed transition-all duration-700 ease-in-out ${
-              pageLoaded
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
+          ref={titleRef} 
+            className="max-w-xl text-lg text-neutral-950 leading-relaxed transition-all duration-700 ease-in-out"
           >
             <p>
               At Forzhen Studios, we’re committed to building premium digital
