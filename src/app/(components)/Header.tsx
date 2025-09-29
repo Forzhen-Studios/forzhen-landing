@@ -7,11 +7,11 @@ export default function Header() {
     <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4  bg-neutral-50 z-20 ">
       <Link href="/">
         <Image
-          src="/studio_logo_white.png"
+          src="/studio_logo_dark.png"
           alt="Forzhen Studios Logo"
           width={49}
           height={49}
-          className="dark:invert cursor-pointer"
+          className="cursor-pointer"
           style={{ width: "auto", height: "auto" }}
           priority
         />
