@@ -86,7 +86,7 @@ export default function AboutUsPage() {
               loop
               className="w-full h-full object-fill rounded-xl"
             >
-              <source src="/forzhen-promo.mp4"  type="video/mp4" />
+              <source src="/forzhenPromo.mp4"  type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
