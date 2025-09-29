@@ -84,7 +84,13 @@ export default function AboutUsPage() {
               background:
                 "linear-gradient(220.55deg, #565656 0%, #181818 100%)",
             }}
-          />
+          >
+            <video autoPlay muted loop className="w-full h-full object-fill rounded-xl">
+              <source src="/forzhen-promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           <div
             className="w-80 h-52 rounded-xl shadow-lg transform rotate-[-2deg]"
             style={{
