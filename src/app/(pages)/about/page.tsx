@@ -2,6 +2,7 @@
 import Footer from "@/app/(components)/footer";
 import Header from "@/app/(components)/Header";
 
+import useLinesAnimation from "@/hooks/useLinesAnimation";
 import { useEffect, useState } from "react";
 
 export default function AboutUsPage() {
@@ -12,6 +13,14 @@ export default function AboutUsPage() {
     return () => clearTimeout(timeout);
   }, []);
 
+  const titleRef = useLinesAnimation({
+    stagger: 0.1,
+    duration: 1,
+    ease: "power4.Out",
+    type: "lines",
+    delay: 0.1,
+    y: 200,
+  });
   return (
     <div className="relative min-h-screen bg-neutral-50 overflow-hidden">
       <Header />
@@ -24,35 +33,25 @@ export default function AboutUsPage() {
 
       <div className="relative mt-14 z-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-8 md:px-20 py-20 items-center">
         <div>
-          <h1 className="relative text-neutral-950 text-6xl md:text-8xl font-extrabold mb-8">
-            {/* Top slice */}
+          <h1
+            ref={titleRef}
+            className="relative text-neutral-950 text-6xl md:text-8xl font-extrabold mb-8"
+          >
             <span className="block overflow-hidden leading-[1] relative">
-              <span
-                className={`block transform transition-transform duration-700 ease-in-out ${
-                  pageLoaded ? "translate-y-0" : "-translate-y-full"
-                }`}
-              >
+              <span className="block transform transition-transform duration-700 ease-in-out">
                 WHO
               </span>
             </span>
-            {/* Bottom slice */}
             <span className="block overflow-hidden leading-[1] relative">
-              <span
-                className={`block transform transition-transform duration-700 ease-in-out delay-100 ${
-                  pageLoaded ? "translate-y-0" : "translate-y-full"
-                }`}
-              >
+              <span className="block transform transition-transform duration-700 ease-in-out delay-100">
                 WE ARE
               </span>
             </span>
           </h1>
 
           <div
-            className={`max-w-xl text-lg text-neutral-950 leading-relaxed transition-all duration-700 ease-in-out ${
-              pageLoaded
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
+            ref={titleRef}
+            className="max-w-xl text-lg text-neutral-950 leading-relaxed transition-all duration-700 ease-in-out"
           >
             <p>
               At Forzhen Studios, we’re committed to building premium digital
@@ -84,28 +83,33 @@ export default function AboutUsPage() {
               background:
                 "linear-gradient(220.55deg, #565656 0%, #181818 100%)",
             }}
-          />
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              className="w-full h-full object-fill rounded-xl"
+            >
+              <source src="/forzhen-promo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
           <div
-            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[-2deg]"
-            style={{
-              background:
-                "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
-            }}
-          />
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[-2deg] items-center justify-center flex"
+          >
+            <h3 className="font-bold text-4xl">VISION</h3>
+          </div>
           <div
-            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[3deg]"
-            style={{
-              background:
-                "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
-            }}
-          />
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[3deg] items-center justify-center flex"
+          >
+            <h3 className="font-bold text-4xl">CREATIVITY</h3>
+          </div>
           <div
-            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[1deg]"
-            style={{
-              background:
-                "linear-gradient(220.55deg, #FFD439 0%, #FF7A00 100%)",
-            }}
-          />
+            className="w-80 h-52 rounded-xl shadow-lg transform rotate-[1deg] items-center justify-center flex"
+          >
+            <h3 className="font-bold text-4xl">PERFORMANCE</h3>
+          </div>
         </div>
       </div>
 
