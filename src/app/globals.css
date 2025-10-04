@@ -44,7 +44,6 @@
 }
 
 body {
-
 }
 
 /* Fade effect for page transition */
@@ -67,7 +66,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  top: 20;
+  top: 22;
   height: 1px;
   width: 100%;
   background-color: currentColor;
