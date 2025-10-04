@@ -8,14 +8,30 @@ import {
   DialogContent,
 } from "@/components/ui/dialog";
 import { Bell } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import NotificationForm from "./notification-form";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const NotifyButton = () => {
+  const buttonRef = useRef(null);
+
+  useGSAP(() => {
+    if (!buttonRef.current) return;
+
+    gsap.from(buttonRef.current, {
+      opacity: 0,
+      duration: 1,
+      delay: 1.23,
+      ease: "power3.inOut",
+    });
+  });
+
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button
+          ref={buttonRef}
           className="relative mt-8 flex items-center justify-center rounded-full border-2 border-neutral-950 bg-neutral-50 px-6 py-3 overflow-hidden group
            hover:bg-neutral-950 hover:text-white  duration-500  transition-colors"
         >
