@@ -24,15 +24,25 @@ const useLinesAnimation = ({
   y = 100,
   targets,
 }: Options) => {
-  const ref = useRef<HTMLParagraphElement | null>(null);
+  // Internal array to hold all DOM nodes
+  const refs = useRef<HTMLElement[]>([]);
 
-  useGSAP(
-    () => {
-      if (!ref.current) return;
+  // Callback ref that React will call for each element
+  const setRef = (el: HTMLElement | null) => {
+    if (el && !refs.current.includes(el)) {
+      refs.current.push(el);
+    }
+    // Optional: remove nodes if they unmount
+    if (!el) {
+      refs.current = refs.current.filter(node => node !== el);
+    }
+  };
 
-      const target = targets
-        ? ref.current.querySelectorAll(targets)
-        : ref.current;
+  useGSAP(() => {
+    refs.current.forEach((el) => {
+      const target = targets ? el.querySelectorAll(targets) : el;
+      if (!target) return;
+
       const split = new SplitText(target, {
         type,
         mask: type,
@@ -46,6 +56,7 @@ const useLinesAnimation = ({
         delay,
         opacity,
       });
+
       gsap.from(split.words, {
         yPercent: y,
         stagger,
@@ -54,10 +65,10 @@ const useLinesAnimation = ({
         delay,
         opacity,
       });
-    },
-    { scope: ref }
-  );
-  return ref;
+    });
+  }, []);
+
+  return setRef; // use titleRef instead
 };
 
 export default useLinesAnimation;
