@@ -23,7 +23,7 @@ const CompanyEmail = ({ class: className }: Props) => {
       }}
     >
       Contact:{" "}
-      <span className="group-hover:text-blue-600 underline-animate relative pb-1.5 transition-colors duration-300">
+      <span className="group-hover:text-amber-500 underline-animate relative pb-1.5 transition-colors duration-300">
         hello@forzhenstudios.com
       </span>
     </Link>
