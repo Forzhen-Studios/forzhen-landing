@@ -31,7 +31,7 @@ export default function AboutUsPage() {
               <span className="block leading-[1]">WE ARE</span>
             </h1>
 
-            <div className="max-w-xl text-lg text-neutral-200 leading-relaxed">
+            <div className="text-neutral-200 leading-relaxed">
               <p>
                 At Forzhen Studios, we&apos;re committed to building premium digital
                 experiences that help businesses and creators thrive. From
@@ -60,7 +60,7 @@ export default function AboutUsPage() {
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
               >
                 <source src="/forzhenPromo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
