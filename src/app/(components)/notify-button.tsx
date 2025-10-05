@@ -31,11 +31,10 @@ const NotifyButton = () => {
     <Dialog>
       <DialogTrigger asChild>
         <button
-          ref={buttonRef}
-          className="relative mt-8 flex items-center justify-center rounded-full border-2 border-neutral-950 bg-neutral-50 px-6 py-3 overflow-hidden group
+          className="cursor-pointer relative mt-8 flex items-center justify-center rounded-full bg-neutral-50 px-6 py-3 overflow-hidden group
            hover:bg-neutral-950 hover:text-white  duration-500  transition-colors"
         >
-          <span className="relative z-10 flex items-center space-x-2">
+          <span className="relative z-10 flex items-center space-x-2 text-neutral-950 group-hover:text-white">
             <span>Official Site Coming Soon —</span>
             <span>Notify Me</span>
             <Bell className="h-5 w-5 transition-transform duration-500 group-hover:rotate-12" />
@@ -48,7 +47,7 @@ const NotifyButton = () => {
         <DialogHeader>
           <DialogTitle>Sign up</DialogTitle>
           <DialogDescription>
-            We$&apos;re currently working on our site sign up to get notified
+            We&apos;re currently working on our site sign up to get notified
             when it&apos;s finished.
           </DialogDescription>
         </DialogHeader>

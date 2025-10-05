@@ -5,7 +5,7 @@ import { Circle } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4  bg-neutral-50 z-20 ">
+    <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4  bg-none z-20 ">
       <Link href="/">
         <Logo />
       </Link>
