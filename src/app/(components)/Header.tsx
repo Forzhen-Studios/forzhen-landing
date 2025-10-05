@@ -12,7 +12,7 @@ export default function Header() {
 
       {/* About Us link */}
       <LinkText href="/about">
-        <Circle className="h-2 w-2 inline-block mr-2 group-hover:fill-neutral-50" />
+        <Circle className="h-2 w-2 inline-block mr-2 duration-100 ease-in-out group-hover:fill-neutral-50" />
         About Us
       </LinkText>
     </header>

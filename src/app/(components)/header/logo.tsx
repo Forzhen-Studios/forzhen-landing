@@ -8,7 +8,7 @@ const Logo = () => {
   return (
     <Image
       ref={ref}
-      src="/studio_logo_dark.png"
+      src="/studio_logo_white.png"
       alt="Forzhen Studios Logo"
       width={49}
       height={49}
