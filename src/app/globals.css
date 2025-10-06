@@ -531,7 +531,8 @@ body {
 
 .gradient-bg {
   background-color: hsl(0, 0%, 0%);
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at var(--x-0) var(--y-0),
       var(--c-0) var(--s0),
       transparent var(--e0)
@@ -606,31 +607,4 @@ body {
   pointer-events: none;
   z-index: -1;
   filter: blur(40px);
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px) rotate(var(--rotate));
-  }
-  50% {
-    transform: translateY(-10px) rotate(var(--rotate));
-  }
-}
-
-.card-1 {
-  --rotate: -1deg;
-  animation: float 6s ease-in-out infinite;
-}
-.card-2 {
-  --rotate: -2deg;
-  animation: float 7s ease-in-out infinite 0.5s;
-}
-.card-3 {
-  --rotate: 3deg;
-  animation: float 6.5s ease-in-out infinite 1s;
-}
-.card-4 {
-  --rotate: 1deg;
-  animation: float 7.5s ease-in-out infinite 1.5s;
 }
