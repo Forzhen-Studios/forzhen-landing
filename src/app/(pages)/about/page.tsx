@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Footer from "@/app/(components)/footer";
 import Header from "@/app/(components)/Header";
-
-
+import { aboutCards } from "@/constants/aboutCards";
+import { cardRotations } from "@/constants/aboutCards";
 
 export default function AboutUsPage() {
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -31,58 +31,104 @@ export default function AboutUsPage() {
               <span className="block leading-[1]">WE ARE</span>
             </h1>
 
-            <div className="text-neutral-200 leading-relaxed">
+            <div className="text-neutral-200 text-left leading-relaxed">
               <p>
-                At Forzhen Studios, we&apos;re committed to building premium digital
-                experiences that help businesses and creators thrive. From
-                beautifully crafted websites to innovative tools, we bring
+                At Forzhen Studios, we&apos;re committed to building premium
+                digital experiences that help businesses and creators thrive.
+                From beautifully crafted websites to innovative tools, we bring
                 together design, functionality, and engineering excellence.
-                Founded by Tevin Campbell (Troy), and Yashwanth Venkatesan (Yash).
-                Our team is driven by creativity, ambition, and a shared vision of
-                what technology can achieve. While our current focus is on
-                delivering impactful software solutions, we are also laying the
-                groundwork for future advancements in gaming and interactive
-                technology. Forzhen Studios is more than a company — it&apos;s a team
-                dedicated to shaping the future of digital innovation.
+                Founded by Tevin Campbell (Troy), and Yashwanth Venkatesan
+                (Yash). Our team is driven by creativity, ambition, and a shared
+                vision of what technology can achieve. While our current focus
+                is on delivering impactful software solutions, we are also
+                laying the groundwork for future advancements in gaming and
+                interactive technology. Forzhen Studios is more than a company —
+                it&apos;s a team dedicated to shaping the future of digital
+                innovation.
               </p>
             </div>
           </div>
 
-          {/* Scrapbook Image Section with Gradient Borders */}
-          <div
-            className={`grid grid-cols-2 gap-5 transition-all duration-700 ease-in-out delay-200 ${
-              pageLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <div className="card-1 w-80 h-52 rounded-xl shadow-lg overflow-hidden border-2 border-neutral-700">
+          <div className="flex flex-wrap justify-center gap-5">
+            <SpotlightCard className="flex-1 min-w-[250px] max-w-[400px] h-52">
               <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-fill"
+                className="w-full h-full object-cover"
               >
                 <source src="/forzhenPromo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
-            </div>
+            </SpotlightCard>
 
-            <div className="card-2 w-80 h-52 border-2 border-neutral-700 rounded-xl shadow-lg flex items-center justify-center">
-              <h3 className="font-bold text-neutral-500 text-4xl">VISION</h3>
-            </div>
-
-            <div className="card-3 w-80 h-52 border-2 border-neutral-700 rounded-xl shadow-lg flex items-center justify-center">
-              <h3 className="font-bold text-neutral-500 text-4xl">CREATIVITY</h3>
-            </div>
-
-            <div className="card-4 w-80 h-52 border-2 border-neutral-700 rounded-xl shadow-lg flex items-center justify-center">
-              <h3 className="font-bold text-neutral-500 text-4xl">PERFORMANCE</h3>
-            </div>
+            {aboutCards.map((card, index) => (
+              <SpotlightCard
+                key={index}
+                className={`flex-1 min-w-[250px] max-w-[400px] h-52 ${
+                  cardRotations[index % cardRotations.length]
+                }`}
+              >
+                <h3 className="font-bold text-neutral-400 text-2xl md:text-4xl text-center">
+                  {card.title}
+                </h3>
+              </SpotlightCard>
+            ))}
           </div>
         </div>
 
         <Footer />
       </div>
     </>
+  );
+}
+
+// Spotlight Card Component - Move to components
+function SpotlightCard({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      className={`relative rounded-xl shadow-lg overflow-hidden border-2 border-neutral-700 flex flex-col items-center justify-center p-4 ${className}`}
+    >
+      {/* Spotlight effect */}
+      {isHovering && (
+        <div
+          className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+          style={{
+            background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(236, 169, 82, 0.09), transparent 40%)`,
+            opacity: 1,
+          }}
+        />
+      )}
+
+      {/* Content */}
+      <div className="relative z-10 w-full h-full flex items-center justify-center">
+        {children}
+      </div>
+    </div>
   );
 }
