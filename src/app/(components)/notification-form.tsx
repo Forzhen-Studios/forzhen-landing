@@ -6,6 +6,7 @@ import { z } from "zod";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -13,11 +14,14 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
-  email: z.string().email("Please enter a valid email address."),
-  // Honeypot: should remain empty
+  email: z.email("Please enter a valid email address."),
+  terms: z.boolean().refine((val) => val === true, {
+    message: "You must accept the terms and conditions",
+  }),
   company: z.string().max(0).optional(),
 });
 
@@ -33,10 +37,22 @@ const NotificationForm = () => {
     defaultValues: {
       name: "",
       email: "",
+      terms: false as any,
       company: "",
     },
     mode: "onBlur",
   });
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      try {
+        const { name, email } = JSON.parse(saved);
+        form.setValue("name", name || "");
+        form.setValue("email", email || "");
+      } catch {}
+    }
+  }, [form]);
 
   useEffect(() => {
     const sub = form.watch((values) => {
@@ -56,7 +72,7 @@ const NotificationForm = () => {
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("ok");
-      form.reset({ name: "", email: "", company: "" });
+      form.reset({ name: "", email: "", company: "", terms: false as any });
       localStorage.removeItem(STORAGE_KEY);
     } catch {
       setStatus("error");
@@ -65,7 +81,26 @@ const NotificationForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
+        <div className="hidden" aria-hidden="true">
+          <FormField
+            control={form.control}
+            name="company"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Company</FormLabel>
+                <FormControl>
+                  <Input
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...field}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
           name="name"
@@ -74,7 +109,7 @@ const NotificationForm = () => {
               <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="enter your name"
+                  placeholder="Enter your name"
                   type="text"
                   autoComplete="name"
                   {...field}
@@ -105,9 +140,47 @@ const NotificationForm = () => {
             </FormItem>
           )}
         />
+
+        <FormField
+          control={form.control}
+          name="terms"
+          render={({ field }) => (
+            <FormItem className="flex flex-row items-start justify-center space-x-3 space-y-0">
+              <FormControl>
+                <Checkbox
+                  checked={field.value as boolean}
+                  onCheckedChange={field.onChange}
+                />
+              </FormControl>
+              <div className="leading-none">
+                <FormDescription className="text-sm font-normal cursor-pointer">
+                  I have read and agree to the{" "}
+                  <a
+                    href="/terms"
+                    className="underline hover:text-amber-500 "
+                    target="_blank"
+                  >
+                    Terms and Conditions
+                  </a>{" "}
+                  and{" "}
+                  <a
+                    href="/privacy"
+                    className="underline hover:text-amber-500 "
+                    target="_blank"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </FormDescription>
+                <FormMessage />
+              </div>
+            </FormItem>
+          )}
+        />
+
         <button
           type="submit"
-          className="rounded-md bg-neutral-900 px-4 py-2 text-white disabled:opacity-60"
+          className=" w-full border-[1px] border-white text-white hover:bg-white hover:text-black transition-all py-3 px-4 rounded-full font-medium"
           disabled={form.formState.isSubmitting}
         >
           {form.formState.isSubmitting ? "Submitting..." : "Submit"}
