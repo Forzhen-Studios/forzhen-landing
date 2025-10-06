@@ -12,6 +12,7 @@ export default function Header() {
   // Define which routes should use dark logo (for white/light backgrounds)
   const darkLogoRoutes = ["/terms", "/privacy"];
   const useDarkLogo = darkLogoRoutes.includes(pathname);
+  const isAboutPage = pathname === "/about";
 
   // Define text and border colors based on background
   const textColor = useDarkLogo ? "text-neutral-950" : "text-neutral-50";
@@ -24,15 +25,18 @@ export default function Header() {
     ? "group-hover:fill-neutral-50"
     : "group-hover:fill-neutral-950";
 
+  console.log("Current pathname:", isAboutPage);
+
   return (
     <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4 bg-none z-20">
       <Link href="/">
-        <Logo />
+        <Logo useDarkLogo={useDarkLogo} isAboutPage={isAboutPage} />
       </Link>
 
       {/* About Us link */}
       <LinkText
         href="/about"
+        isAboutPage={isAboutPage}
         className={`flex group items-center px-4 py-2 rounded-full border transition-colors duration-300 ${textColor} ${borderColor} ${hoverBg} ${hoverText}`}
       >
         <Circle

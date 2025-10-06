@@ -9,12 +9,14 @@ const LinkText = ({
   href,
   children,
   className,
+  isAboutPage,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
+  isAboutPage: boolean;
 }) => {
-  const ref = useFadeAnimation();
+  const ref = useFadeAnimation(isAboutPage);
   const router = useTransitionRouter();
   const setExit = useAnimationStore((state) => state.setExit);
   return (

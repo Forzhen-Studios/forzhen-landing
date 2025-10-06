@@ -2,19 +2,18 @@
 
 import Image from "next/image";
 import useFadeAnimation from "@/hooks/useFadeAnimation";
-import { usePathname } from "next/navigation";
 
-const Logo = () => {
-  const pathname = usePathname();
+type LogoProps = {
+  useDarkLogo?: boolean;
+  isAboutPage: boolean;
+};
 
-  // Define which routes should use dark logo (for white/light backgrounds)
-  const darkLogoRoutes = ["/terms", "/privacy"];
-  const useDarkLogo = darkLogoRoutes.includes(pathname);
-  const ref = useFadeAnimation();
+const Logo = ({ useDarkLogo, isAboutPage }: LogoProps) => {
+  const ref = useFadeAnimation(isAboutPage);
   return (
     <Image
       ref={ref}
-      src="/studio_logo_white.png"
+      src={useDarkLogo ? "/studio_logo_dark.png" : "/studio_logo_white.png"}
       alt="Forzhen Studios Logo"
       width={49}
       height={49}
