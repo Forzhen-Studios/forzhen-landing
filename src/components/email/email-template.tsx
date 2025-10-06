@@ -1,4 +1,14 @@
 import * as React from "react";
+import crypto from "crypto";
+
+function generateToken(email: string): string {
+  const secret = process.env.UNSUBSCRIBE_SECRET || "your-secret-key";
+  return crypto
+    .createHmac("sha256", secret)
+    .update(email)
+    .digest("hex")
+    .slice(0, 32);
+}
 
 interface EmailTemplateProps {
   firstName?: string;
@@ -10,9 +20,8 @@ export function EmailTemplate({
   subscriberEmail,
 }: EmailTemplateProps) {
   const logoUrl = "https://forzhenstudios.com/studio_logo_white.png";
-  const unsubscribeUrl = `https://forzhenstudios.com/unsubscribe?email=${encodeURIComponent(
-    subscriberEmail
-  )}`;
+  const token = generateToken(subscriberEmail);
+  const unsubscribeUrl = `https://forzhenstudios.com/unsubscribe?email=${encodeURIComponent(subscriberEmail)}&token=${token}`;
   return (
     <main
       style={{
@@ -31,7 +40,7 @@ export function EmailTemplate({
           overflow: "hidden",
         }}
       >
-        Welcome to Forzhen Studios — You're on the list! 🎉
+        Welcome to Forzhen Studios — You&apos;re on the list! 🎉
       </div>
       <table
         role="presentation"
@@ -141,7 +150,7 @@ export function EmailTemplate({
                   >
                     {firstName ? `Hey ${firstName},` : "Hey there,"}
                     <br />
-                    you're on the list
+                    you&apos;re on the list
                   </h1>
 
                   <p
@@ -153,7 +162,7 @@ export function EmailTemplate({
                       letterSpacing: "0.2px",
                     }}
                   >
-                    Thank you for your interest in Forzhen Studios. We're
+                    Thank you for your interest in Forzhen Studios. We&apos;re
                     building something exceptional — sleek platforms and tools
                     that empower teams and creators.
                   </p>
@@ -167,9 +176,9 @@ export function EmailTemplate({
                       letterSpacing: "0.2px",
                     }}
                   >
-                    You'll be among the first to know when we launch. As we
-                    grow, we're expanding into interactive entertainment and
-                    game technology, scaling our studio into a hub for
+                    You&apos;ll be among the first to know when we launch. As we
+                    grow, we&apos;re expanding into interactive entertainment
+                    and game technology, scaling our studio into a hub for
                     innovation and creativity.
                   </p>
 
