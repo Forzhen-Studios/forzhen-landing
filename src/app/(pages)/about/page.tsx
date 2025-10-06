@@ -35,7 +35,7 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-5">
+          <div className="flex flex-wrap justify-center gap-5 max-w-[600px] mx-auto">
             <SpotlightCard className="flex-1 min-w-[250px] max-w-[400px] h-52">
               <video
                 autoPlay
