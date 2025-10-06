@@ -8,9 +8,11 @@ import Link from "next/link";
 const LinkText = ({
   href,
   children,
+  className,
 }: {
   href: string;
   children: React.ReactNode;
+  className?: string;
 }) => {
   const ref = useFadeAnimation();
   const router = useTransitionRouter();
@@ -24,8 +26,7 @@ const LinkText = ({
         setExit(true);
         router.push(href);
       }}
-      className="flex group items-center px-4 py-2 rounded-full text-neutral-50 border border-neutral-50
-         hover:bg-neutral-950 hover:text-neutral-50 hover:border-neutral-950 transition-colors duration-300"
+      className={className}
     >
       {children}
     </Link>
