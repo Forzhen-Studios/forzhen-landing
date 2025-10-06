@@ -213,7 +213,7 @@ export default function TermsPage() {
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
               You may withdraw consent and request removal from our notification
-              list at any time by contacting us at [EMAIL ADDRESS] or using
+              list at any time by contacting us at support@forzhenstudios.com or using
               unsubscribe links in our emails.
             </p>
           </section>
@@ -255,9 +255,9 @@ export default function TermsPage() {
               9. Governing Law
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
-              These Terms shall be governed by the laws of [STATE NAME], United
-              States. Any disputes shall be resolved in the courts of [COUNTY],
-              [STATE NAME].
+              These Terms shall be governed by the laws of North Carolina, United
+              States. Any disputes shall be resolved in the courts of Wake County,
+              North Carolina.
             </p>
           </section>
 
@@ -270,13 +270,13 @@ export default function TermsPage() {
             </h2>
             <div className="bg-neutral-50 p-6 rounded-lg border border-neutral-200">
               <p className="text-neutral-950 text-lg mb-2">
-                <strong>[COMPANY NAME]</strong>
+                <strong>Forzhen Studios</strong>
               </p>
               <p className="text-neutral-950 text-lg mb-2">
-                Email: [EMAIL ADDRESS]
+                Email: hello@forzhenstudios.com
               </p>
               <p className="text-neutral-950 text-lg">
-                Address: [PHYSICAL ADDRESS]
+                {/* Address: [PHYSICAL ADDRESS] */}
               </p>
             </div>
 
