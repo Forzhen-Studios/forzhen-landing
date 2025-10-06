@@ -1,18 +1,9 @@
-import * as React from "react";
+import React from "react";
 
-interface EmailTemplateProps {
-  firstName?: string;
-  subscriberEmail: string;
-}
-
-export function EmailTemplate({
-  firstName,
-  subscriberEmail,
-}: EmailTemplateProps) {
-  const logoUrl = "https://forzhenstudios.com/studio_logo_white.png";
-  const unsubscribeUrl = `https://forzhenstudios.com/unsubscribe?email=${encodeURIComponent(
-    subscriberEmail
-  )}`;
+const Test = () => {
+  const subscriberEmail = "<user_email>";
+  const logoUrl = "/studio_logo_white.png"; // Add your logo URL here if available
+  const unsubscribeUrl = "https://forzhenstudios.com/unsubscribe"; // Add your unsubscribe URL here if available
   return (
     <main
       style={{
@@ -24,15 +15,6 @@ export function EmailTemplate({
           '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
       }}
     >
-      <div
-        style={{
-          display: "none",
-          maxHeight: 0,
-          overflow: "hidden",
-        }}
-      >
-        Welcome to Forzhen Studios — You're on the list! 🎉
-      </div>
       <table
         role="presentation"
         style={{
@@ -70,16 +52,10 @@ export function EmailTemplate({
                           <img
                             src={logoUrl}
                             alt="Forzhen Studios"
-                            width="80"
-                            height="80"
                             style={{
                               maxWidth: "80px",
                               height: "auto",
                               display: "block",
-                              color: "#ffffff",
-                              fontSize: "14px",
-                              fontWeight: "700",
-                              letterSpacing: "1px",
                             }}
                           />
                         ) : (
@@ -139,9 +115,9 @@ export function EmailTemplate({
                       lineHeight: "1.1",
                     }}
                   >
-                    {firstName ? `Hey ${firstName},` : "Hey there,"}
+                    You're on
                     <br />
-                    you're on the list
+                    the list
                   </h1>
 
                   <p
@@ -337,4 +313,6 @@ export function EmailTemplate({
       </table>
     </main>
   );
-}
+};
+
+export default Test;

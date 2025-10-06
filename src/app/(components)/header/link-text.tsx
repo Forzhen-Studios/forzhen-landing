@@ -1,6 +1,7 @@
 "use client";
 
 import useFadeAnimation from "@/hooks/useFadeAnimation";
+import useAnimationStore from "@/stores/useAnimationStore";
 import { useTransitionRouter } from "next-view-transitions";
 import Link from "next/link";
 
@@ -13,12 +14,14 @@ const LinkText = ({
 }) => {
   const ref = useFadeAnimation();
   const router = useTransitionRouter();
+  const setExit = useAnimationStore((state) => state.setExit);
   return (
     <Link
       ref={ref}
       href={href}
       onClick={(e) => {
         e.preventDefault();
+        setExit(true);
         router.push(href);
       }}
       className="flex group items-center px-4 py-2 rounded-full text-neutral-50 border border-neutral-50

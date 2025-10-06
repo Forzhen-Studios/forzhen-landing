@@ -25,7 +25,7 @@ const useLinesAnimation = ({
   y = 100,
   targets,
 }: Options) => {
-  const exit = useAnimationStore((state) => state.exit);
+  const { exit, setExit } = useAnimationStore();
   // Internal array to hold all DOM nodes
   const refs = useRef<HTMLElement[]>([]);
 
@@ -71,6 +71,13 @@ const useLinesAnimation = ({
         gsap.to(split.lines, {
           yPercent: y * 2,
           stagger,
+          duration,
+          ease,
+          delay: 0,
+          opacity,
+          onComplete: () => {
+            setExit(false);
+          },
         });
       }
     });

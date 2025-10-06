@@ -3,7 +3,7 @@
 import useLinesAnimation from "@/hooks/useLinesAnimation";
 
 const Description = () => {
-  const { setRef: descriptionRef } = useLinesAnimation({ delay: 1 });
+  const descriptionRef = useLinesAnimation({ delay: 1 });
 
   return (
     <p className="text-neutral-200 leading-relaxed" ref={descriptionRef}>

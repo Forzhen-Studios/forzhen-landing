@@ -7,7 +7,7 @@ import useLinesAnimation from "@/hooks/useLinesAnimation";
 import { Fragment } from "react";
 
 const Socials = () => {
-  const { setRef: ref } = useLinesAnimation({
+  const ref = useLinesAnimation({
     type: "lines",
     duration: 1.2,
     stagger: 0.06,

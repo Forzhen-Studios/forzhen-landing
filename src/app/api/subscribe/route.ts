@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { neon } from "@neondatabase/serverless";
 import { Resend } from "resend";
+import { EmailTemplate } from "@/components/email/email-template";
 
 const Body = z.object({
   name: z.string().min(2),
@@ -49,17 +50,20 @@ export async function POST(req: Request) {
 
     // Optional: send immediate confirmation (don't fail request if it errors)
     try {
-      await resend.emails.send({
-        from: "Your Brand <hello@yourdomain.com>",
+      const result = await resend.emails.send({
+        from: "Forzhen Studios <tevin.campbell@forzhenstudios.com>",
         to: parsed.data.email,
         subject: "You’re on the list 🎉",
-        html: `
-          <div style="font-family:Inter,system-ui,Arial,sans-serif">
-            <h1>Thanks, ${escapeHtml(parsed.data.name)}!</h1>
-            <p>We’ll email you as soon as the site is live.</p>
-          </div>
-        `,
+        react: EmailTemplate({
+          firstName: parsed.data.name,
+          subscriberEmail: parsed.data.email,
+        }),
       });
+      console.log("Resend result:", result);
+
+      if (result.error) {
+        console.error("Resend returned error:", result.error);
+      }
     } catch (e) {
       console.error("Resend send error", e);
     }
@@ -68,14 +72,4 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json({ error: "Failed to subscribe" }, { status: 500 });
   }
-}
-
-function escapeHtml(s: string) {
-  return s.replace(
-    /[&<>"']/g,
-    (c) =>
-      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[
-        c as "&" | "<" | ">" | '"' | "'"
-      ] as string)
-  );
 }

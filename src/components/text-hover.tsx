@@ -20,9 +20,9 @@ type TextHoverProps = {
 const TextHover = ({
   text,
   className,
-  duration = 0.3,
+  duration = 0.275,
   stagger = 0.035,
-  ease = "power3.out",
+  ease = "power2.inOut",
   isLink = false,
   href = "#",
   linkClass,
