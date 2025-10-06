@@ -1,8 +1,6 @@
 "use client";
 
 import useFadeAnimation from "@/hooks/useFadeAnimation";
-import useAnimationStore from "@/stores/useAnimationStore";
-import { useTransitionRouter } from "next-view-transitions";
 import Link from "next/link";
 
 const LinkText = ({
@@ -10,24 +8,23 @@ const LinkText = ({
   children,
   className,
   isAboutPage,
+  handleClick,
 }: {
   href: string;
   children: React.ReactNode;
   className?: string;
   isAboutPage: boolean;
+  handleClick: (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => void;
 }) => {
   const ref = useFadeAnimation(isAboutPage);
-  const router = useTransitionRouter();
-  const setExit = useAnimationStore((state) => state.setExit);
   return (
     <Link
       ref={ref}
       href={href}
-      onClick={(e) => {
-        e.preventDefault();
-        setExit(true);
-        router.push(href);
-      }}
+      onClick={(e) => handleClick(e, href)}
       className={className}
     >
       {children}

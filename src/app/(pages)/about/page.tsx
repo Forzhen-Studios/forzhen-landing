@@ -4,6 +4,8 @@ import Footer from "@/app/(components)/footer";
 import Header from "@/app/(components)/Header";
 import { aboutCards } from "@/constants/aboutCards";
 import { cardRotations } from "@/constants/aboutCards";
+import AboutDescription from "./components/about-description";
+import AboutTitle from "./components/about-title";
 
 export default function AboutUsPage() {
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -26,26 +28,10 @@ export default function AboutUsPage() {
 
         <div className="relative mt-14 z-10 grid grid-cols-1 md:grid-cols-2 gap-12 px-8 md:px-20 py-20 items-center">
           <div className="gradient-glow">
-            <h1 className="relative text-neutral-50 text-6xl md:text-8xl font-extrabold mb-8">
-              <span className="block leading-[1]">WHO</span>
-              <span className="block leading-[1]">WE ARE</span>
-            </h1>
+            <AboutTitle />
 
             <div className="text-neutral-200 text-left leading-relaxed">
-              <p>
-                At Forzhen Studios, we&apos;re committed to building premium
-                digital experiences that help businesses and creators thrive.
-                From beautifully crafted websites to innovative tools, we bring
-                together design, functionality, and engineering excellence.
-                Founded by Tevin Campbell (Troy), and Yashwanth Venkatesan
-                (Yash). Our team is driven by creativity, ambition, and a shared
-                vision of what technology can achieve. While our current focus
-                is on delivering impactful software solutions, we are also
-                laying the groundwork for future advancements in gaming and
-                interactive technology. Forzhen Studios is more than a company —
-                it&apos;s a team dedicated to shaping the future of digital
-                innovation.
-              </p>
+              <AboutDescription />
             </div>
           </div>
 

@@ -5,9 +5,13 @@ import LinkText from "./header/link-text";
 import Logo from "./header/logo";
 import { Circle } from "lucide-react";
 import { usePathname } from "next/navigation";
+import useAnimationStore from "@/stores/useAnimationStore";
+import { useTransitionRouter } from "next-view-transitions";
 
 export default function Header() {
   const pathname = usePathname();
+  const { exit, setExit } = useAnimationStore((state) => state);
+  const router = useTransitionRouter();
 
   // Define which routes should use dark logo (for white/light backgrounds)
   const darkLogoRoutes = ["/terms", "/privacy"];
@@ -27,15 +31,31 @@ export default function Header() {
 
   console.log("Current pathname:", isAboutPage);
 
+  const handleClick = async (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => {
+    e.preventDefault();
+    if (!href) return;
+    if (href === pathname) return; // No transition if clicking the same page link
+    if (exit) return; // Prevent multiple clicks
+
+    setExit(true);
+    await new Promise((resolve) => setTimeout(resolve, 900));
+    router.push(href);
+    setExit(false);
+  };
+
   return (
     <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4 bg-none z-20">
-      <Link href="/">
+      <Link href="/" onClick={(e) => handleClick(e, "/")}>
         <Logo useDarkLogo={useDarkLogo} isAboutPage={isAboutPage} />
       </Link>
 
       {/* About Us link */}
       <LinkText
         href="/about"
+        handleClick={handleClick}
         isAboutPage={isAboutPage}
         className={`flex group items-center px-4 py-2 rounded-full border transition-colors duration-300 ${textColor} ${borderColor} ${hoverBg} ${hoverText}`}
       >

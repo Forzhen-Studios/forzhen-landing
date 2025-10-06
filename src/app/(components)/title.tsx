@@ -1,6 +1,6 @@
 "use client";
+
 import useLinesAnimation from "@/hooks/useLinesAnimation";
-import React from "react";
 
 const Title = () => {
   const titleRef = useLinesAnimation({

@@ -67,18 +67,42 @@ const useLinesAnimation = ({
         delay,
         opacity,
       });
+
       if (exit) {
-        gsap.to(split.lines, {
-          yPercent: y * 2,
-          stagger,
-          duration,
-          ease,
-          delay: 0,
-          opacity,
-          onComplete: () => {
-            setExit(false);
-          },
-        });
+        gsap.fromTo(
+          split.lines,
+          { yPercent: 0, opacity: 1 },
+          {
+            yPercent: -y,
+            ease: "power2.in",
+            duration: 0.8,
+            delay: 0,
+            opacity: 1,
+            onComplete: () => {
+              refs.current.forEach((el) => {
+                el.classList.add("invisible");
+              });
+            },
+          }
+        );
+
+        gsap.fromTo(
+          split.words,
+          { yPercent: 0, opacity: 1 },
+          {
+            yPercent: -y,
+            ease: "power2.in",
+            duration: 1,
+            delay: 0,
+            opacity: 1,
+            onComplete: () => {
+              refs.current.forEach((el) => {
+                el.classList.add("invisible");
+              });
+              setExit(false);
+            },
+          }
+        );
       }
     });
   }, [exit]);
