@@ -31,6 +31,7 @@ const NotifyButton = () => {
     <Dialog>
       <DialogTrigger asChild>
         <button
+          ref={buttonRef}
           className="cursor-pointer relative mt-8 flex items-center justify-center rounded-full bg-neutral-50 px-6 py-3 overflow-hidden group
            hover:bg-neutral-950 hover:text-white  duration-500  transition-colors"
         >

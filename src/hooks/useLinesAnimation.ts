@@ -2,6 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { SplitText } from "gsap/SplitText";
+import useAnimationStore from "@/stores/useAnimationStore";
 
 type Options = {
   duration?: number;
@@ -24,7 +25,7 @@ const useLinesAnimation = ({
   y = 100,
   targets,
 }: Options) => {
-  const [exitAnimation, setExitAnimation] = useState(false);
+  const exit = useAnimationStore((state) => state.exit);
   // Internal array to hold all DOM nodes
   const refs = useRef<HTMLElement[]>([]);
 
@@ -66,16 +67,14 @@ const useLinesAnimation = ({
         delay,
         opacity,
       });
-      if (exitAnimation) {
+      if (exit) {
         gsap.to(split.lines, {
           yPercent: y * 2,
           stagger,
         });
       }
     });
-  }, [exitAnimation]);
-
-  const exit = () => {};
+  }, [exit]);
 
   return setRef; // use titleRef instead
 };

@@ -3,7 +3,7 @@ import useLinesAnimation from "@/hooks/useLinesAnimation";
 import React from "react";
 
 const Title = () => {
-  const titleRef = useLinesAnimation({
+  const { setRef: titleRef } = useLinesAnimation({
     stagger: 0.1,
     duration: 1,
     ease: "power4.Out",

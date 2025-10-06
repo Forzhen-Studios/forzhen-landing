@@ -21,8 +21,8 @@ const LinkText = ({
         e.preventDefault();
         router.push(href);
       }}
-      className="flex group items-center px-4 py-2 rounded-full text-neutral-950 border border-neutral-950
-         hover:bg-neutral-950 hover:text-neutral-50 transition-colors duration-300"
+      className="flex group items-center px-4 py-2 rounded-full text-neutral-50 border border-neutral-50
+         hover:bg-neutral-950 hover:text-neutral-50 hover:border-neutral-950 transition-colors duration-300"
     >
       {children}
     </Link>

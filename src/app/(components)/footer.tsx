@@ -4,7 +4,7 @@ import useLinesAnimation from "@/hooks/useLinesAnimation";
 import Link from "next/link";
 
 const Footer = () => {
-  const ref = useLinesAnimation({
+  const { setRef: ref } = useLinesAnimation({
     type: "lines",
     duration: 1,
     stagger: 0,
