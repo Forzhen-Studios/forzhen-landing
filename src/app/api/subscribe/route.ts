@@ -7,7 +7,7 @@ import { EmailTemplate } from "@/components/email/email-template";
 
 const Body = z.object({
   name: z.string().min(2),
-  email: z.string().email(),
+  email: z.email(),
   company: z.string().max(0).optional(), // honeypot
 });
 
