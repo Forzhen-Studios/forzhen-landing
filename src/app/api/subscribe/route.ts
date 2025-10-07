@@ -51,7 +51,7 @@ export async function POST(req: Request) {
     // Optional: send immediate confirmation (don't fail request if it errors)
     try {
       const result = await resend.emails.send({
-        from: "Forzhen Studios <tevin.campbell@forzhenstudios.com>",
+        from: "Forzhen Studios <updates@forzhenstudios.com>",
         to: parsed.data.email,
         subject: "You’re on the list 🎉",
         react: EmailTemplate({
