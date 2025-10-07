@@ -5,7 +5,7 @@
 
 	-  Gradient background (WebGL): colors + tuning
 
-    -  Adjist hero h1 line height on mobile view
+    -  Adjust hero h1 line height on mobile view
 
 
 -  Dialogs
