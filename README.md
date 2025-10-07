@@ -5,6 +5,8 @@
 
 	-  Gradient background (WebGL): colors + tuning
 
+    -  Adjist hero h1 line height on mobile view
+
 
 -  Dialogs
 	-  Submission loading animation
@@ -22,3 +24,18 @@
 
 -  Metadata
 	-  Update icons (favicon, touch, maskable)
+
+
+- Background
+    -  Fix background (HTML?) on mobile to dark
+
+
+- About page
+    - look into animation lag
+    - Revist about paragraph
+
+
+- All pages
+    -  make sure font size (headers, body) looks good on all screen sizes
+
+
