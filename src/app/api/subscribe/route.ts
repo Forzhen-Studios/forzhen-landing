@@ -20,7 +20,7 @@ export async function POST(req: Request) {
     const parsed = Body.safeParse(data);
     if (!parsed.success) {
       return NextResponse.json(
-        { error: parsed.error.flatten().fieldErrors },
+        { error: parsed.error.message },
         { status: 400 }
       );
     }

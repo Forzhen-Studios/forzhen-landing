@@ -37,7 +37,7 @@ const NotificationForm = () => {
     defaultValues: {
       name: "",
       email: "",
-      terms: false as any,
+      terms: false,
       company: "",
     },
     mode: "onBlur",
@@ -72,7 +72,7 @@ const NotificationForm = () => {
       });
       if (!res.ok) throw new Error(await res.text());
       setStatus("ok");
-      form.reset({ name: "", email: "", company: "", terms: false as any });
+      form.reset({ name: "", email: "", company: "", terms: false });
       localStorage.removeItem(STORAGE_KEY);
     } catch {
       setStatus("error");

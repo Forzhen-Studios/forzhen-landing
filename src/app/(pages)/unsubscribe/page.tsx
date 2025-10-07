@@ -23,9 +23,19 @@ export const Unsubscribe: React.FC = () => {
 
   const handleUnsubscribe = async (email: string, token: string) => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const res = await fetch("/api/unsubscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, token }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to unsubscribe");
+      }
+
       setStatus("success");
     } catch (error) {
+      console.error("Unsubscribe error:", error);
       setStatus("error");
     }
   };
@@ -60,7 +70,7 @@ export const Unsubscribe: React.FC = () => {
               <div className="text-center">
                 <CheckCircle2 className="w-12 h-12 text-white/40 mx-auto mb-6" />
                 <h1 className="text-3xl font-bold text-white mb-4 tracking-tight">
-                  You're unsubscribed
+                  You&apos;re unsubscribed
                 </h1>
                 <p className="text-white/70 text-sm leading-relaxed mb-6">
                   {email && (
@@ -69,12 +79,12 @@ export const Unsubscribe: React.FC = () => {
                       removed from our mailing list.
                     </>
                   )}
-                  {!email && "You've been removed from our mailing list."}
+                  {!email && "You&apos;ve been removed from our mailing list."}
                 </p>
                 <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6"></div>
                 <p className="text-white/40 text-xs leading-relaxed">
-                  We're sorry to see you go. If you change your mind, you can
-                  always sign up again on our website.
+                  We&apos;re sorry to see you go. If you change your mind, you
+                  can always sign up again on our website.
                 </p>
               </div>
             )}
@@ -88,8 +98,8 @@ export const Unsubscribe: React.FC = () => {
                   Something went wrong
                 </h1>
                 <p className="text-white/70 text-sm leading-relaxed mb-6">
-                  We couldn't process your unsubscribe request. The link may be
-                  invalid or expired.
+                  We couldn&apos;t process your unsubscribe request. The link
+                  may be invalid or expired.
                 </p>
                 <p className="text-white/40 text-xs leading-relaxed">
                   If you continue to receive emails, please contact us at{" "}
