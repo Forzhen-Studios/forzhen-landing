@@ -17,7 +17,7 @@ import useAnimationStore from "@/stores/useAnimationStore";
 
 const NotifyButton = () => {
   const buttonRef = useRef(null);
-  const exit = useAnimationStore((state) => state.exit);
+  const exit = useAnimationStore((state: { exit: unknown; }) => state.exit);
 
   useGSAP(() => {
     if (!buttonRef.current) return;

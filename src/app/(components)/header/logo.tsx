@@ -18,7 +18,7 @@ const Logo = ({ useDarkLogo, isAboutPage }: LogoProps) => {
       width={49}
       height={49}
       className="cursor-pointer"
-      style={{ width: "auto", height: "auto" }}
+      style={{ width: "auto", height: "auto", maxWidth: "60px" }}
       priority
     />
   );

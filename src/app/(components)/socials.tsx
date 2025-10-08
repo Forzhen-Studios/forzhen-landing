@@ -19,7 +19,7 @@ const Socials = () => {
 
   return (
     <aside
-      className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12 max-w-lg"
+      className="flex-1 flex flex-col items-center lg:items-start lg:text-left space-y-12 max-w-lg"
       ref={ref}
     >
       {socialLinks.map((link) => (
