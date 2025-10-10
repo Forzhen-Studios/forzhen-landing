@@ -44,6 +44,8 @@
 }
 
 body {
+  font-family: var(--font-sans);
+;
 }
 
 /* Fade effect for page transition */
