@@ -56,7 +56,7 @@ export default function PrivacyPolicyPage() {
           className="mb-16 opacity-0 animate-fadeIn"
           style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
         >
-          <h1 className="text-6xl md:text-7xl font-bold mb-4 text-neutral-950">
+          <h1 className="text-3xl font-bold mb-4 text-neutral-950">
             Privacy Policy
           </h1>
           <p className="text-xl text-neutral-600">Last Updated: Oct. 5, 2025</p>
@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               1. Information We Collect
             </h2>
 
@@ -146,7 +146,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               2. How We Use Your Information
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg mb-4">
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               3. Legal Basis for Processing (GDPR)
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg mb-4">
@@ -215,7 +215,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               4. How We Share Your Information
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg mb-4">
@@ -271,7 +271,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               5. Data Security
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg mb-4">
@@ -310,7 +310,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               6. Data Retention
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
@@ -329,7 +329,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.1s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               7. Your Privacy Rights
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg mb-4">
@@ -428,7 +428,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.2s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               8. International Data Transfers
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
@@ -446,7 +446,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.3s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               9. Children&apos;s Privacy
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
@@ -465,7 +465,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.4s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               10. Third-Party Links
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
@@ -481,7 +481,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.5s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               11. Do Not Track Signals
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
@@ -496,7 +496,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.6s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               12. Changes to This Privacy Policy
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">
@@ -516,7 +516,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp"
             style={{ animationDelay: "1.7s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               13. Contact Us
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg mb-4">
@@ -541,7 +541,7 @@ export default function PrivacyPolicyPage() {
             className="opacity-0 animate-fadeInUp mb-20"
             style={{ animationDelay: "1.9s", animationFillMode: "forwards" }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-neutral-950">
+            <h2 className="text-2xl font-bold mb-6 text-neutral-950">
               15. Consent
             </h2>
             <p className="text-neutral-950 leading-relaxed text-lg">

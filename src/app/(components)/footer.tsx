@@ -29,7 +29,7 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className={`lg:fixed flex flex-col sm:flex-row text-xs items-center bottom-0 left-0 right-0 justify-between py-2 px-5 ${textColor}`}
+      className={`lg:fixed flex flex-col sm:flex-row text-xs items-center bottom-0 left-0 right-0 justify-between py-2 px-5 z-10 ${textColor}`}
     >
       <p className="footer-target">
         &copy; {new Date().getFullYear()} Forzhen Studios. All rights reserved.

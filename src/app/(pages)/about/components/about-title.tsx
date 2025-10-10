@@ -13,7 +13,7 @@ const AboutTitle = () => {
   return (
     <h1
       ref={ref}
-      className="relative text-neutral-50 text-6xl md:text-8xl font-extrabold mb-8"
+      className="relative text-neutral-50 text-6xl sm:text-8xl leading-[1] tracking-tight font-extrabold mb-8"
     >
       <span className="block s leading-[1]">WHO</span>
       <span className="block s leading-[1]">WE ARE</span>

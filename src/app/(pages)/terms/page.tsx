@@ -53,7 +53,7 @@ export default function TermsPage() {
           className="mb-16 opacity-0 animate-fadeIn"
           style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
         >
-          <h1 className="text-6xl md:text-7xl font-bold mb-4 text-neutral-950">
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-neutral-950">
             Terms and Conditions
           </h1>
           <p className="text-xl text-neutral-600">Pre-Launch Notification</p>
