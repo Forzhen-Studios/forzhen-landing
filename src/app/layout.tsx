@@ -8,14 +8,16 @@ import TabTitleChanger from "@/components/tab-title-changer";
 
 gsap.registerPlugin(SplitText);
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
   subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -75,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Forzhen Studios",
     description:
-      "Web design & development | Game development Our temporary landing site while we build out our full studio site.",
+      "Web design & development | Game development — our temporary landing site while we build out our full studio site.",
     images: ["https://forzhenstudios.com/studio_logo_white.png"],
     creator: "@forzhenstudios",
   },
@@ -88,10 +90,8 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+      <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
+        <body className="antialiased">
           <TabTitleChanger />
           {children}
         </body>
@@ -99,3 +99,4 @@ export default function RootLayout({
     </ViewTransitions>
   );
 }
+//  Forzhen Studios ™
