@@ -16,7 +16,7 @@ export default function Home() {
         <div className="absolute inset-0 gradient-bg -z-10" />
         <Header />
         <main className="flex flex-wrap lg:gap-52 gap-32 px-10 py-5 items-center justify-center">
-          <div className="flex-1 flex flex-col py-10 justify-center lg:justify-start max-w-lg space-y-4 text-center lg:text-left mt-20 lg:mt-0">
+          <div className="flex-1 flex flex-col py-24 md:py-38 justify-center lg:justify-start max-w-lg space-y-4 text-center items-center lg:text-left mt-20 lg:mt-0">
             <Title />
             <Description />
             <NotifyButton />

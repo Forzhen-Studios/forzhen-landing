@@ -17,7 +17,7 @@ import useAnimationStore from "@/stores/useAnimationStore";
 
 const NotifyButton = () => {
   const buttonRef = useRef(null);
-  const exit = useAnimationStore((state) => state.exit);
+  const exit = useAnimationStore((state: { exit: unknown; }) => state.exit);
 
   useGSAP(() => {
     if (!buttonRef.current) return;
@@ -49,12 +49,12 @@ const NotifyButton = () => {
       <DialogTrigger asChild>
         <button
           ref={buttonRef}
-          className="cursor-pointer relative mt-8 flex items-center justify-center rounded-full bg-neutral-50 px-6 py-3 overflow-hidden group
+          className="cursor-pointer relative mt-8 flex items-center justify-center rounded-full bg-neutral-50 w-64 lg:w-full md:w-64 py-3 overflow-hidden group
            hover:bg-neutral-950 hover:text-white duration-500  transition-colors opacity-0"
         >
           <span className="relative z-10 flex items-center space-x-2 text-neutral-950 group-hover:text-white">
             {/* <span>Official Site Coming Soon —</span> */}
-            <span>Waitlist</span>
+            <span>Join the waitlist</span>
             <Bell className="h-5 w-5 transition-transform duration-500 group-hover:rotate-12" />
           </span>
           <span className="absolute inset-0 bg-neutral-950 scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 rounded-full"></span>

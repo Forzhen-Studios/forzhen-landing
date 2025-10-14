@@ -1,28 +1,41 @@
-This is the start of the Forzhen Studios links site built with nextjs and tailwindcss.
-This site poses as a landing page until furhter changes.
+-  Landing Page
+	-  Micro-interactions: update notification button interaction
 
-## Getting Started
+	-  Page transitions: circular reveal/conceal effect
 
-Clone project repository
+	-  Gradient background (WebGL): colors + tuning
 
-```bash
-git clone https://github.com/Forzhen-Studios/forzhen-landing.git
-```
+    -  Adjust hero h1 line height on mobile view
 
-Second, install modules
 
-```bash
-npm install
-```
+-  Dialogs
+	-  Submission loading animation
 
-Then, run the development server:
+	-  Variants: already signed up / success / error with retry
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+
+-  Cards
+	-  Fix aspect ratio (responsive)
+
+	-  Improve entrance/exit animations
+
+	-  Spotlight: smoother animation
+
+
+-  Metadata
+	-  Update icons (favicon, touch, maskable)
+
+
+- Background
+    -  Fix background (HTML?) on mobile to dark
+
+
+- About page
+    - look into animation lag
+    - Revist about paragraph
+
+
+- All pages
+    -  make sure font size (headers, body) looks good on all screen sizes
+
+
