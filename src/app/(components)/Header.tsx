@@ -47,7 +47,9 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4 bg-none z-20">
+    <header
+      className={`w-full fixed flex items-center justify-between px-5 py-4 bg-none z-20 ${pathname === "/" ? "top-7" : "top-0"}`}
+    >
       <Link href="/" onClick={(e) => handleClick(e, "/")}>
         <Logo useDarkLogo={useDarkLogo} isAboutPage={isAboutPage} />
       </Link>

@@ -7,7 +7,7 @@ import crypto from "crypto";
 const sql = neon(process.env.DATABASE_URL!);
 
 const QuerySchema = z.object({
-  email: z.string().email(),
+  email: z.email(),
   token: z.string().min(1),
 });
 
