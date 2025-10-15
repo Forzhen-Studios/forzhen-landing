@@ -17,7 +17,7 @@ import useAnimationStore from "@/stores/useAnimationStore";
 
 const NotifyButton = () => {
   const buttonRef = useRef(null);
-  const exit = useAnimationStore((state: { exit: unknown; }) => state.exit);
+  const exit = useAnimationStore((state: { exit: unknown }) => state.exit);
 
   useGSAP(() => {
     if (!buttonRef.current) return;
@@ -50,7 +50,7 @@ const NotifyButton = () => {
         <button
           ref={buttonRef}
           className="cursor-pointer relative mt-8 flex items-center justify-center rounded-full bg-neutral-50 w-64 lg:w-full md:w-64 py-3 overflow-hidden group
-           hover:bg-neutral-950 hover:text-white duration-500  transition-colors opacity-0"
+           hover:bg-neutral-950 hover:text-white duration-500  transition-colors opacity-0 will-change-auto"
         >
           <span className="relative z-10 flex items-center space-x-2 text-neutral-950 group-hover:text-white">
             {/* <span>Official Site Coming Soon —</span> */}

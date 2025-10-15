@@ -7,7 +7,7 @@ const Description = () => {
 
   return (
     <p
-      className="text-neutral-100 text-center text-sm lg:text-left leading-relaxed"
+      className="text-neutral-100 text-center text-sm lg:text-left leading-relaxed will-change-contents"
       ref={descriptionRef}
     >
       We build software for businesses, teams, and creators, delivering simple,

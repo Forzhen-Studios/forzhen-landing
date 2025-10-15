@@ -16,10 +16,10 @@ const Title = () => {
     <div>
       <h1
         ref={titleRef}
-        className="text-6xl sm:text-8xl text-center lg:text-left font-black tracking-[-2px] leading-[1]"
+        className="text-6xl sm:text-8xl text-center lg:text-left font-black tracking-[-2px] leading-[1] will-change-transform"
       >
         FORZHEN STUDIOS
-        <span className="text-[0.3em] translate-y-[0.40em] inline-block pr-[0.08em] tracking-tight ml-[0.15em] font-semibold">
+        <span className="text-[0.3em] translate-y-[0.40em] inline-block pr-[0.08em] tracking-tight ml-[0.15em] font-semibold will-change-transform">
           ™
         </span>
       </h1>

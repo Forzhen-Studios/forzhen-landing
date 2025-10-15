@@ -79,8 +79,10 @@ const TextHover = ({
       onBlur={leave}
       aria-label={text}
     >
-      <span className={`${className} letter-old `}>{text}</span>
-      <span className={` letter-new`}>{text}</span>
+      <span className={`${className} letter-old will-change-transform`}>
+        {text}
+      </span>
+      <span className={` letter-new will-change-transform`}>{text}</span>
       <span className="sr-only">{text}</span>
     </span>
   ) : (
@@ -95,8 +97,12 @@ const TextHover = ({
       href={href}
       target="_blank"
     >
-      <span className={`${className} letter-old `}>{text}</span>
-      <span className={` letter-new absolute `}>{text}</span>
+      <span className={`${className} letter-old will-change-transform`}>
+        {text}
+      </span>
+      <span className={` letter-new absolute will-change-transform`}>
+        {text}
+      </span>
       <span className="sr-only">{text}</span>
     </Link>
   );
