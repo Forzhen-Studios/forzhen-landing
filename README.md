@@ -34,8 +34,3 @@
     - look into animation lag
     - Revist about paragraph
 
-
-- All pages
-    -  make sure font size (headers, body) looks good on all screen sizes
-
-
