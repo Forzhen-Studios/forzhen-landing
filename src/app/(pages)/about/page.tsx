@@ -40,20 +40,6 @@ export default function AboutUsPage() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-5 max-w-[600px] mx-auto">
-          {/* Video Card */}
-          <SpotlightCard className="flex-1 min-w-[250px] max-w-[400px] h-52">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-fill"
-            >
-              <source src="/forzhenPromo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </SpotlightCard>
-
           {/* Other cards */}
           {aboutCards.map((card, index) => (
             <SpotlightCard
