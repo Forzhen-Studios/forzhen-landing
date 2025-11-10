@@ -47,7 +47,9 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full fixed top-0 flex items-center justify-between px-5 py-4 bg-none z-20">
+    <header
+      className={`w-full fixed flex items-center justify-between px-5 py-4 bg-none z-20 ${pathname === "/" ? "top-7" : "top-0"}`}
+    >
       <Link href="/" onClick={(e) => handleClick(e, "/")}>
         <Logo useDarkLogo={useDarkLogo} isAboutPage={isAboutPage} />
       </Link>
@@ -57,7 +59,7 @@ export default function Header() {
         href="/about"
         handleClick={handleClick}
         isAboutPage={isAboutPage}
-        className={`flex group items-center px-4 py-2 rounded-full border transition-colors duration-300 ${textColor} ${borderColor} ${hoverBg} ${hoverText}`}
+        className={`flex group items-center px-4 py-2 rounded-full border transition-colors will-change-auto duration-300 ${textColor} ${borderColor} ${hoverBg} ${hoverText}`}
       >
         <Circle
           className={`h-2 w-2 inline-block mr-2 duration-100 ease-in-out ${circleFill}`}
