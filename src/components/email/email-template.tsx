@@ -1,5 +1,6 @@
 import * as React from "react";
 import crypto from "crypto";
+import Image from "next/image";
 
 function generateToken(email: string): string {
   const secret = process.env.UNSUBSCRIBE_SECRET || "your-secret-key";
@@ -76,7 +77,7 @@ export function EmailTemplate({
                     <tr>
                       <td>
                         {logoUrl ? (
-                          <img
+                          <Image
                             src={logoUrl}
                             alt="Forzhen Studios"
                             width="80"
