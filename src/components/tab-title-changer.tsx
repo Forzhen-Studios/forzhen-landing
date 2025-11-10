@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 const titles = [
   "🥺 Come back, we miss you!",
-  "👀 Still here? Check out our projects!",
   "🚀 We're launching soon, stay tuned!",
   "💡 Got ideas? We'd love to hear them!",
   "🎮 Game development in progress!",
