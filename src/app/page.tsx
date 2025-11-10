@@ -4,13 +4,10 @@ import Title from "./(components)/title";
 import NotifyButton from "./(components)/notify-button";
 import Description from "./(components)/description";
 import Footer from "./(components)/footer";
-import Banner from "./(components)/banner";
 
 export default function Home() {
   return (
     <>
-      <Banner />
-
       <div className="relative flex flex-col min-h-screen justify-center text-neutral-50">
         {/* Animated gradient bg */}
         <div className="absolute inset-0 gradient-bg -z-10" />

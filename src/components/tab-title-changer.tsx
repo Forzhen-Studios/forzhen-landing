@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 const titles = [
   "🥺 Come back, we miss you!",
   "👀 Still here? Check out our projects!",
